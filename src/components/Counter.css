@@ -1,0 +1,23 @@
+.container {
+    padding: 5px;
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.displayNum{
+    color: white;
+    
+}
+
+.plusMinusBtn{
+    width: auto;
+    height: auto;
+    background-color: gray;
+    font-size: large;
+    border-radius: 20%;
+}
