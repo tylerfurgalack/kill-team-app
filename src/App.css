@@ -1,7 +1,9 @@
 .appContainer{
-  width: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   height: auto;
   border: 1px solid black;
   background-color: black;
-  display: flex;
+  
 }
