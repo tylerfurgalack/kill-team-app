@@ -1,4 +1,6 @@
+import React from "react";
 import Counter from "./components/Counter";
+import KtLogo from "./KtLogo.jpg";
 import "./App.css";
 
 function App() {
@@ -8,7 +10,9 @@ function App() {
         <h2 className="displayText">Command Points</h2>
         <Counter />
       </div>
-      <img className="imageContainer" alt="Kill Team Logo"/>
+      <div className="imageContainer">
+      <img scr={KtLogo} alt=""  />
+      </div>
       <div>
         <h2 className="displayText">Victory Points</h2>
         <Counter />
