@@ -8,7 +8,7 @@ function App() {
         <h2 className="displayText">Command Points</h2>
         <Counter />
       </div>
-      <div className="displayText">Image will go here</div>
+      <img className="imageContainer" alt="Kill Team Logo"/>
       <div>
         <h2 className="displayText">Victory Points</h2>
         <Counter />
