@@ -7,13 +7,12 @@
   background-color: black;
 }
 .displayText {
-  color: rgb(211, 85, 27);
+  color: rgb(218, 78, 14);
 }
 
 .imageContainer {
-  object-fit: cover;
-  height: 50px;
-  width: 50px;
+  object-fit:contain;
+  
 }
 
 .image {

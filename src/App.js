@@ -11,7 +11,7 @@ function App() {
         <Counter />
       </div>
       <div className="imageContainer">
-      <img scr={KtLogo} alt=""  />
+      <img src={KtLogo} alt=""  />
       </div>
       <div>
         <h2 className="displayText">Victory Points</h2>
