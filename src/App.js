@@ -1,24 +1,10 @@
 import React from "react";
-import Counter from "./components/Counter";
-import KtLogo from "./KtLogo.jpg";
-import "./App.css";
+import CounterBar from "./components/CounterBar";
 
 function App() {
   return (
-    <div className="appContainer">
-      <div>
-        <h2 className="displayText">Command Points</h2>
-        <Counter />
-      </div>
-      <div className="imageContainer">
-      <img src={KtLogo} alt=""  />
-      </div>
-      <div>
-        <h2 className="displayText">Victory Points</h2>
-        <Counter />
-      </div>
-    </div>
-  );
+    <CounterBar />
+  )
 }
 
 export default App;
