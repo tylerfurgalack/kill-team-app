@@ -1,13 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
+import PointHistory from "./PointHistory";
 import "./Counter.css";
 
 const Counter = () => {
+  // const textInputRef = useRef();
+
   const [count, setCount] = useState(0);
   const [inputCount, setInputCount] = useState(0);
 
-  // useEffect(() => {
+  // const addInputHandler = (inputCount, textInputRef) => {
+  //   let input = inputCount + textInputRef
+  //   return input;
+  // }
 
-  // })
 
   return (
     <div>
@@ -34,9 +39,15 @@ const Counter = () => {
           +
         </button>
       </div>
-      <label className="displayNum"> Points History</label>
-      <input type="text" value={inputCount} readOnly></input>
-      <button id="submitBtn" type="submit">Enter</button>
+      <form>
+        <label className="displayNum"> Points History</label>
+        <p className="displayNum">{inputCount}</p>
+        <input id="pointInputs" type="text"></input>
+        <button id="submitBtn" type="submit">
+          Enter
+        </button>
+      </form>
+      <PointHistory/>
     </div>
   );
 };
