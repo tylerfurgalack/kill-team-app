@@ -1,11 +1,18 @@
 import React from "react";
+import "./Counter.css"
 
 const PointHistory = (props) => {
+
   return (
+    <div className="displayNum">
     <ul>
-        <li>
+      {props.pointList.map((entry) => (
+        <li key={entry.id}>
+          {entry.num} {entry.text}
         </li>
+      ))}
     </ul>
+    </div>
   );
 };
 
