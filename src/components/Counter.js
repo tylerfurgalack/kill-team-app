@@ -1,29 +1,32 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import PointHistory from "./PointHistory";
 import "./Counter.css";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
-  const [inputCount, setInputCount] = useState(0);
-  const [enteredText, setEnteredText] = useState("");
   const [pointList, setPointList] = useState([]);
+  const textInputRef = useRef();
+  const [inputCount, setInputCount] = useState(0);
 
   const addPointHistoryHandler = (event) => {
     event.preventDefault();
-    console.log(inputCount, enteredText);
+    const enteredText = textInputRef.current.value;
     setPointList((prevPointList) => {
       return [
         ...prevPointList,
-        { num: inputCount, text: enteredText, id: Math.random().toString() },
+        {
+          num: inputCount,
+          text: enteredText,
+          id: Math.random().toString(),
+        },
       ];
     });
     setInputCount(0);
-    setEnteredText("");
+    textInputRef.current.value = "";
   };
-
-  const inputChangeHandler = (event) => {
-    setEnteredText(event.target.value);
-  };
+  // const inputChangeHandler = (event) => {
+  //   setEnteredText(event.target.value);
+  // };
 
   return (
     <div>
@@ -53,12 +56,7 @@ const Counter = () => {
       <form onSubmit={addPointHistoryHandler}>
         <label className="displayNum"> Points History</label>
         <p className="displayNum">{inputCount}</p>
-        <input
-          id="pointInputs"
-          type="text"
-          onChange={inputChangeHandler}
-          value={enteredText}
-        ></input>
+        <input id="pointInputs" type="text" ref={textInputRef}></input>
         <button id="submitBtn" type="submit">
           Enter
         </button>
