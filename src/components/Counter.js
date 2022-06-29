@@ -1,19 +1,19 @@
 import { useState, useRef } from "react";
-import PointHistory from "./PointHistory";
+import PointList from "./PointList";
 import "./Counter.css";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
-  const [pointList, setPointList] = useState([]);
+  const [pointHistory, setPointHistory] = useState([]);
   const textInputRef = useRef();
   const [inputCount, setInputCount] = useState(0);
 
   const addPointHistoryHandler = (event) => {
     event.preventDefault();
     const enteredText = textInputRef.current.value;
-    setPointList((prevPointList) => {
+    setPointHistory((prevPointHistory) => {
       return [
-        ...prevPointList,
+        ...prevPointHistory,
         {
           num: inputCount,
           text: enteredText,
@@ -24,9 +24,6 @@ const Counter = () => {
     setInputCount(0);
     textInputRef.current.value = "";
   };
-  // const inputChangeHandler = (event) => {
-  //   setEnteredText(event.target.value);
-  // };
 
   return (
     <div>
@@ -61,7 +58,7 @@ const Counter = () => {
           Enter
         </button>
       </form>
-      <PointHistory pointList={pointList} />
+      <PointList pointHistory={pointHistory} />
     </div>
   );
 };

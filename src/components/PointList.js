@@ -1,12 +1,12 @@
 import React from "react";
 import "./Counter.css"
 
-const PointHistory = (props) => {
+const PointList = (props) => {
 
   return (
     <div className="displayNum">
     <ul>
-      {props.pointList.map((entry) => (
+      {props.pointHistory.map((entry) => (
         <li key={entry.id}>
           {entry.num} {entry.text}
         </li>
@@ -16,4 +16,4 @@ const PointHistory = (props) => {
   );
 };
 
-export default PointHistory;
+export default PointList;
