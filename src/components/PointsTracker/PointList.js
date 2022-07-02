@@ -6,9 +6,9 @@ const PointList = (props) => {
   return (
     <div className="displayNum">
     <ul>
-      {props.pointHistory.map((entry) => (
-        <li key={entry.id}>
-          {entry.num} {entry.text}
+      {props.pointHistorys.map((pointHistory) => (
+        <li key={pointHistory.id}>
+          {pointHistory.num} {pointHistory.text}
         </li>
       ))}
     </ul>

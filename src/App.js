@@ -1,6 +1,6 @@
 import React from "react";
 import KtLogo from "./KtLogo.jpg";
-import Counter from "./components/Counter";
+import PointsTracker from "./components/PointsTracker";
 import "./components/CounterBar.css";
 
 function App() {
@@ -8,14 +8,14 @@ function App() {
     <div className="barContainer">
       <div className="counterContainer">
         <h2 className="displayText">Command Points</h2>
-        <Counter id="commandPoints" />
+        <PointsTracker id="commandPoints" />
       </div>
       <div className="imageContainer">
         <img src={KtLogo} alt="" />
       </div>
       <div className="counterContainer">
         <h2 className="displayText">Victory Points</h2>
-        <Counter id="victoryPoints" />
+        <PointsTracker id="victoryPoints" />
       </div>
     </div>
   );

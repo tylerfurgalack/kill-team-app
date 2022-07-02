@@ -1,17 +1,18 @@
 import { useState, useRef } from "react";
 import PointList from "./PointList";
 import "./Counter.css";
+import PointInput from "./PointInput";
 
-const Counter = () => {
+const PointsTracker = () => {
   const [count, setCount] = useState(0);
-  const [pointHistory, setPointHistory] = useState([]);
+  const [pointHistorys, setPointHistorys] = useState([]);
   const textInputRef = useRef();
   const [inputCount, setInputCount] = useState(0);
 
   const addPointHistoryHandler = (event) => {
     event.preventDefault();
     const enteredText = textInputRef.current.value;
-    setPointHistory((prevPointHistory) => {
+    setPointHistorys((prevPointHistory) => {
       return [
         ...prevPointHistory,
         {
@@ -50,17 +51,14 @@ const Counter = () => {
           +
         </button>
       </div>
-      <form onSubmit={addPointHistoryHandler}>
-        <label className="displayNum"> Points History</label>
-        <p className="displayNum">{inputCount}</p>
-        <input id="pointInputs" type="text" ref={textInputRef}></input>
-        <button id="submitBtn" type="submit">
-          Enter
-        </button>
-      </form>
-      <PointList pointHistory={pointHistory} />
+      <PointInput
+        inputCount={inputCount}
+        textInputRef={textInputRef}
+        addPointHistoryHandler={addPointHistoryHandler}
+      />
+      <PointList pointHistorys={pointHistorys} />
     </div>
   );
 };
 
-export default Counter;
+export default PointsTracker;
